@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Lien d'évitement : visible uniquement au clavier, il permet d'aller
+   directement au contenu principal (accessibilité).
+   ========================================================================== */
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: var(--z-skip-link);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-brand);
+  color: var(--white);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: none;
+}

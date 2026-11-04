@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Point d'entrée des styles
+   --------------------------------------------------------------------------
+   L'ordre des couches (@layer) fixe la priorité de la cascade, quel que soit
+   l'ordre des sélecteurs : une règle d'une couche plus basse dans la liste
+   l'emporte toujours sur une couche plus haute.
+
+   settings   → design tokens (variables), aucune règle de style
+   base       → reset, éléments HTML nus, contextes de couleur
+   layout     → conteneur, rythme vertical des sections
+   components → éléments réutilisables (boutons, en-tête, cartes…)
+   sections   → mise en forme propre à chaque section de la page
+   utilities  → classes utilitaires et états (apparition, masquage)
+   ========================================================================== */
+
+@layer settings, base, layout, components, sections, utilities;
+
+@import url("settings/tokens.css") layer(settings);
+
+@import url("base/reset.css") layer(base);
+@import url("base/fonts.css") layer(base);
+@import url("base/global.css") layer(base);
+@import url("base/surfaces.css") layer(base);
+
+@import url("layout/container.css") layer(layout);
+@import url("layout/section.css") layer(layout);
+
+@import url("components/icon.css") layer(components);
+@import url("components/button.css") layer(components);
+@import url("components/eyebrow.css") layer(components);
+@import url("components/skip-link.css") layer(components);
+@import url("components/site-header.css") layer(components);
+@import url("components/marquee.css") layer(components);
+@import url("components/avatar.css") layer(components);
+@import url("components/device.css") layer(components);
+@import url("components/media-slot.css") layer(components);
+
+@import url("sections/hero.css") layer(sections);
+@import url("sections/partners.css") layer(sections);
+@import url("sections/services.css") layer(sections);
+@import url("sections/project.css") layer(sections);
+@import url("sections/work.css") layer(sections);
+@import url("sections/tools.css") layer(sections);
+@import url("sections/about.css") layer(sections);
+@import url("sections/booking.css") layer(sections);
+@import url("sections/site-footer.css") layer(sections);
+
+@import url("utilities/utilities.css") layer(utilities);

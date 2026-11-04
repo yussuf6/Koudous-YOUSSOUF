@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Avatar rond recadré sur le visage à partir du portrait de l'accueil.
+   ========================================================================== */
+
+.avatar {
+  position: relative;
+  flex: none;
+  width: 3.25rem;
+  height: 3.25rem;
+  overflow: hidden;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background-color: var(--color-brand);
+}
+
+.avatar__img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 190%;
+  max-width: none;
+  height: auto;
+  translate: -50% 0;
+}
+
+.avatar--sm {
+  width: 2.875rem;
+  height: 2.875rem;
+}

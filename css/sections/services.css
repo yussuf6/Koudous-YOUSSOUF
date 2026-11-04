@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Services : quatre cartes. Au survol, un fond graphite monte depuis le bas.
+   ========================================================================== */
+
+.services__list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 560px) {
+  .services__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
+  .services__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.service-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  min-width: 0;
+  padding: 1.875rem 1.625rem 2rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base),
+    border-color 400ms,
+    color 400ms;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-dark);
+  transform: translateY(101%);
+  transition: transform 600ms var(--ease-out);
+}
+
+.service-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.625rem;
+}
+
+.service-card__icon {
+  display: grid;
+  place-items: center;
+  width: 3.625rem;
+  height: 3.625rem;
+  border-radius: 1.125rem;
+  background-color: var(--color-brand);
+  color: var(--white);
+  transition: transform 600ms var(--ease-out);
+}
+
+.service-card__icon img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.service-card__title {
+  margin-top: 1.125rem;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-heavy);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.service-card__text {
+  color: var(--color-text-soft);
+  transition: color 400ms;
+}
+
+@media (hover: hover) {
+  .service-card:hover {
+    border-color: var(--color-dark);
+    box-shadow: var(--shadow-soft);
+    color: var(--color-on-dark);
+    transform: translateY(-6px);
+  }
+
+  .service-card:hover::before {
+    transform: none;
+  }
+
+  .service-card:hover .service-card__icon {
+    transform: rotate(-8deg) scale(1.06);
+  }
+
+  .service-card:hover .service-card__text {
+    color: var(--color-on-dark-soft);
+  }
+}

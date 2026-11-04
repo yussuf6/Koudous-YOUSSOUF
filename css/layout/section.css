@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Section : rythme vertical et en-tête de section réutilisable.
+   ========================================================================== */
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+/* Section qui suit directement un bloc arrondi : pas d'espace en haut. */
+.section--flush-top {
+  padding-top: 0;
+}
+
+.section__header {
+  display: grid;
+  gap: 1.125rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section__header--center {
+  justify-items: center;
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--text-display);
+  font-weight: var(--weight-heavy);
+  line-height: var(--leading-none);
+  letter-spacing: var(--tracking-tight);
+}
+
+.section__intro {
+  max-width: 56ch;
+  color: var(--ctx-text-soft);
+  font-size: var(--text-md);
+}

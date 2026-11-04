@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Emplacement média (réalisations)
+   --------------------------------------------------------------------------
+   Cadre à fond blanc qui accueille une <img> ou une <video>.
+
+   Modificateurs de format :
+   --logo  1:1   logo centré avec marge
+   --visual 1:1  affiche carrée, plein cadre
+   --map   4:3   carte affichée en entier (rien n'est rogné)
+   --video 9:16  vidéo verticale, plein cadre
+   ========================================================================== */
+
+.media-slot {
+  --slot-ratio: 1;
+  --slot-bg: var(--color-surface);
+
+  position: relative;
+  aspect-ratio: var(--slot-ratio);
+  max-width: 100%;
+  overflow: hidden;
+  border: 1.5px solid rgb(255 255 255 / 0.2);
+  border-radius: var(--radius-md);
+  background-color: var(--slot-bg);
+  transition:
+    border-color 400ms,
+    transform var(--duration-base) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .media-slot:hover {
+    border-color: var(--color-brand-bright);
+    transform: translateY(-4px);
+  }
+}
+
+.media-slot > img,
+.media-slot > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Formats ------------------------------------------------------------ */
+
+.media-slot--logo > img {
+  padding: 16%;
+  object-fit: contain;
+}
+
+.media-slot--map {
+  --slot-ratio: 4 / 3;
+}
+
+/* Une carte doit rester lisible en entier : légende, échelle et nord compris. */
+.media-slot--map > img {
+  object-fit: contain;
+}
+
+/* Fond sombre : évite un flash blanc avant l'affichage de l'image d'aperçu. */
+.media-slot--video {
+  --slot-ratio: 9 / 16;
+  --slot-bg: var(--color-dark);
+}

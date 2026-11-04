@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   Toutes les valeurs de design (couleurs, typographie, espacements, rayons,
+   ombres, durées) sont définies ici et uniquement ici.
+
+   Hiérarchie des couleurs :
+   - vert  → couleur de marque : actions, mots clés, grands blocs
+   - gris  → base : fonds, cartes, textes, sections sombres
+   - jaune → accent ponctuel : chevrons, points, boutons sur fond vert
+
+   Points de rupture (les variables CSS ne fonctionnent pas dans les media
+   queries : utilisez ces valeurs telles quelles) :
+   sm 560px · md 760px · lg 980px · xl 1180px
+   ========================================================================== */
+
+:root {
+  /* ---- Palette brute ---------------------------------------------------- */
+  --white: #ffffff;
+  --gray-50: #f2f4f1;
+  --gray-100: #e7ebe7;
+  --gray-200: #dce1dc;
+  --gray-300: #bac3bc;
+  --gray-500: #7f8882;
+  --gray-600: #545c57;
+  --gray-900: #1a1f1c;
+  --graphite-700: #303733;
+  --graphite-800: #252b28;
+  --graphite-900: #1c211f;
+  --mist-50: #f3f5f2;
+  --green-300: #2dbe7e;
+  --green-400: #13a266;
+  --green-500: #008751;
+  --green-600: #007a49;
+  --green-700: #00703f;
+  --green-800: #06573a;
+  --green-900: #05402b;
+  --yellow-400: #fcd116;
+  --yellow-600: #e1ad17;
+
+  /* ---- Couleurs par rôle (à utiliser dans les composants) --------------- */
+  --color-bg: var(--gray-50);
+  --color-surface: var(--white);
+  --color-surface-muted: var(--gray-100);
+  --color-border: var(--gray-200);
+  --color-border-strong: var(--gray-300);
+  --color-text: var(--gray-900);
+  --color-text-soft: var(--gray-600);
+  --color-text-mute: var(--gray-500);
+
+  --color-brand: var(--green-500);
+  --color-brand-hover: var(--green-700);
+  --color-brand-text: var(--green-600);
+  --color-brand-bright: var(--green-300);
+  --color-brand-deep: var(--green-900);
+  --color-brand-glow: rgb(0 135 81 / 0.34);
+  --color-brand-tint: rgb(45 190 126 / 0.12);
+
+  --color-accent: var(--yellow-400);
+  --color-accent-deep: var(--yellow-600);
+
+  --color-dark: var(--graphite-900);
+  --color-dark-raised: var(--graphite-800);
+  --color-dark-high: var(--graphite-700);
+  --color-on-dark: var(--mist-50);
+  --color-on-dark-soft: rgb(243 245 242 / 0.72);
+  --color-on-dark-mute: rgb(243 245 242 / 0.48);
+  --color-on-dark-line: rgb(255 255 255 / 0.1);
+
+  /* ---- Typographie ------------------------------------------------------ */
+  --font-sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  --text-2xs: 0.6875rem;  /* 11px */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1.03rem;   /* ~16.5px */
+  --text-md: 1.09rem;     /* ~17.5px */
+  --text-lg: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --text-xl: 1.5rem;
+  --text-display-sm: clamp(2.125rem, 4.6vw, 3.875rem);
+  --text-display: clamp(2.25rem, 5.4vw, 4.75rem);
+  --text-hero: clamp(3.375rem, 8.4vw, 8rem);
+
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.25;
+  --leading-normal: 1.6;
+
+  --tracking-tight: -0.035em;
+  --tracking-label: 0.16em;
+
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+  --weight-black: 900;
+
+  /* ---- Espacements ------------------------------------------------------ */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --section-space: clamp(5.25rem, 10vw, 9rem);
+
+  /* ---- Mise en page ----------------------------------------------------- */
+  --container-max: 82.5rem;    /* 1320px */
+  --gutter: 1rem;              /* ajusté par breakpoint dans layout/container.css */
+  --header-offset: 6rem;       /* hauteur réservée par l'en-tête fixe lors des ancres */
+
+  /* ---- Rayons ----------------------------------------------------------- */
+  --radius-sm: 0.875rem;
+  --radius-md: 1.375rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: clamp(1.75rem, 4vw, 3.25rem);
+  --radius-pill: 999px;
+
+  /* ---- Ombres ----------------------------------------------------------- */
+  --shadow-soft: 0 26px 56px -28px rgb(20 32 26 / 0.32);
+  --shadow-strong: 0 30px 60px -22px rgb(0 0 0 / 0.55);
+
+  /* ---- Mouvement -------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 250ms;
+  --duration-base: 500ms;
+  --duration-slow: 1000ms;
+
+  /* ---- Plans (z-index) -------------------------------------------------- */
+  --z-band: 4;
+  --z-header: 60;
+  --z-skip-link: 100;
+}

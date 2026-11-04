@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Boutons
+   --------------------------------------------------------------------------
+   .btn             base commune
+   .btn--primary    action principale (vert)
+   .btn--accent     action principale posée sur une surface verte (jaune)
+   .btn--ghost      action secondaire, s'adapte à la surface (--ctx-*)
+   .btn--sm         variante compacte (en-tête)
+   .btn__icon       pastille ronde avec flèche
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.4375rem 0.4375rem 0.4375rem 1.375rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 0.97rem;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    transform 350ms var(--ease-out),
+    background-color 300ms,
+    border-color 300ms,
+    color 300ms,
+    box-shadow 350ms;
+}
+
+.btn__icon {
+  display: grid;
+  place-items: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 50%;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.btn__icon .icon {
+  width: 1.0625rem;
+  height: 1.0625rem;
+  stroke-width: 2.2;
+}
+
+/* Flèche pleine des boutons (symbole #icon-arrow du sprite). */
+.btn__icon .icon--arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn:hover .btn__icon {
+    transform: rotate(-45deg);
+  }
+}
+
+/* ---- Variantes ---------------------------------------------------------- */
+
+.btn--primary {
+  background-color: var(--color-brand);
+  color: var(--white);
+}
+
+.btn--primary .btn__icon {
+  background-color: var(--white);
+  color: var(--color-brand);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-brand-hover);
+  box-shadow: 0 14px 30px -12px var(--color-brand-glow);
+}
+
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+}
+
+.btn--accent .btn__icon {
+  background-color: var(--color-dark);
+  color: var(--white);
+}
+
+.btn--ghost {
+  padding: 0.875rem 1.5rem;
+  border-color: var(--ctx-border);
+  background-color: transparent;
+  color: var(--ctx-text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--ctx-text);
+}
+
+.btn--sm {
+  gap: 0.625rem;
+  padding: 0.3125rem 0.3125rem 0.3125rem 1.125rem;
+  font-size: var(--text-sm);
+}
+
+.btn--sm .btn__icon {
+  width: 2rem;
+  height: 2rem;
+}

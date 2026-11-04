@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Outils : grille de logos de logiciels.
+   ========================================================================== */
+
+.tools__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.875rem;
+}
+
+@media (min-width: 760px) {
+  .tools__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
+  .tools__list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.tool-card {
+  min-width: 0;
+  padding: 1.125rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base),
+    border-color 400ms;
+}
+
+.tool-card img {
+  width: 100%;
+  height: auto;
+}
+
+@media (hover: hover) {
+  .tool-card:hover {
+    border-color: var(--color-brand);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-5px);
+  }
+}

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Utilitaires et états globaux.
+   ========================================================================== */
+
+/* Texte lu par les lecteurs d'écran mais invisible à l'écran. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mot mis en avant dans un titre : prend la couleur d'accent de la surface. */
+.text-accent {
+  color: var(--ctx-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Apparition au défilement (js/modules/reveal.js)
+   - Sans JavaScript (.no-js) ou avec « mouvement réduit », tout est visible.
+   - Filet de sécurité : si les modules JavaScript ne démarrent pas (erreur
+     dans un fichier .js, réseau coupé, page ouverte par double-clic), le
+     contenu s'affiche quand même après 3 s. reveal.js ajoute .reveal-ready
+     sur <html> pour désactiver ce filet quand tout fonctionne.
+     Le délai (3s) doit rester identique à FAILSAFE_MS dans reveal.js.
+   - L'animation utilise les propriétés individuelles opacity/translate :
+     elle ne gêne pas les transform des effets de survol.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal]:not(.is-visible) {
+    opacity: 0.3;
+    translate: 0 28px;
+    animation: reveal-failsafe var(--duration-slow) var(--ease-out) 3s forwards;
+  }
+
+  .reveal-ready [data-reveal]:not(.is-visible) {
+    animation: none;
+  }
+
+  .js [data-reveal].is-visible {
+    animation: reveal var(--duration-slow) var(--ease-out) both;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0.3;
+    translate: 0 28px;
+  }
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}

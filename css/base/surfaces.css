@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Contextes de couleur (surfaces)
+   --------------------------------------------------------------------------
+   Les composants ne connaissent pas la couleur du fond sur lequel ils sont
+   posés : ils lisent les variables --ctx-*. Chaque surface les redéfinit,
+   si bien qu'un même bouton « ghost » ou un même titre fonctionne sur fond
+   clair, graphite ou vert sans modificateur supplémentaire.
+   ========================================================================== */
+
+:root {
+  --ctx-text: var(--color-text);
+  --ctx-text-soft: var(--color-text-soft);
+  --ctx-text-mute: var(--color-text-mute);
+  --ctx-accent: var(--color-brand);
+  --ctx-eyebrow: var(--color-brand-text);
+  --ctx-chevron: var(--color-accent-deep);
+  --ctx-border: var(--color-border-strong);
+  --ctx-line: var(--color-border);
+}
+
+/* Surface graphite : en-tête, accueil, réalisations, vision, pied de page. */
+.surface-dark {
+  --ctx-text: var(--color-on-dark);
+  --ctx-text-soft: var(--color-on-dark-soft);
+  --ctx-text-mute: var(--color-on-dark-mute);
+  --ctx-accent: var(--color-brand-bright);
+  --ctx-eyebrow: var(--color-brand-bright);
+  --ctx-chevron: var(--color-accent);
+  --ctx-border: rgb(255 255 255 / 0.28);
+  --ctx-line: var(--color-on-dark-line);
+
+  background-color: var(--color-dark);
+  color: var(--ctx-text);
+}
+
+/* Surface verte (couleur de marque) : projet phare, bloc de réservation. */
+.surface-brand {
+  --ctx-text: var(--color-on-dark);
+  --ctx-text-soft: var(--color-on-dark-soft);
+  --ctx-text-mute: var(--color-on-dark-mute);
+  --ctx-accent: var(--color-accent);
+  --ctx-eyebrow: var(--color-on-dark);
+  --ctx-chevron: var(--color-accent);
+  --ctx-border: rgb(255 255 255 / 0.3);
+  --ctx-line: rgb(255 255 255 / 0.16);
+
+  background-color: var(--color-brand);
+  color: var(--ctx-text);
+}

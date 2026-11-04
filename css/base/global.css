@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Styles globaux des éléments HTML.
+   ========================================================================== */
+
+html {
+  scroll-padding-top: var(--header-offset);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: clip;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--leading-snug);
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.surface-dark :focus-visible,
+.surface-brand :focus-visible {
+  outline-color: var(--color-accent);
+}
