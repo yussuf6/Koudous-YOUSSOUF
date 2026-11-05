@@ -8,9 +8,8 @@
  */
 export default {
   // Méta
-  'meta.title': 'Koudous Youssouf · Graphic designer & motion designer',
-  'meta.description': 'Portfolio of Koudous Youssouf: graphic design, motion design, digital communication and mapping. Lead of the Bénin Hébergement project.',
-  'a11y.skip': 'Skip to content',
+  'meta.title': 'Koudous Youssouf · Graphic & motion designer in Benin',
+  'meta.description': 'Graphic designer, motion designer and digital communicator in Benin: logos, visuals, animated videos and GIS mapping. Lead of the Bénin Hébergement project.',
 
   // En-tête et navigation
   'header.homeLabel': 'Koudous Youssouf, back to home',
