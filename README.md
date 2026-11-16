@@ -61,7 +61,7 @@ portfolio-koudous/
 │   ├── icons/
 │   │   └── services/          Icônes des cartes de services
 │   ├── images/
-│   │   ├── portrait.webp
+│   │   ├── og-image.webp
 │   │   ├── og-image.jpg       Image d'aperçu des liens partagés (1200×630)
 │   │   ├── projects/          Captures de Bénin Hébergement
 │   │   ├── partners/          Logos des entreprises (aussi utilisés dans « Logos réalisés »)
